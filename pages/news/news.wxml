@@ -1,0 +1,33 @@
+<!--pages/news/news.wxml-->
+<view class="news-container">
+<swiper indicator-dots="{{ndicator}}" indicator-color="rgba(0, 0, 0, .3)" autoplay="{{autoplay}}" interval="{{interval}}" circular="{{circular}}">
+    <swiper-item >
+        <image src="../images/banner1.jpg" />
+    </swiper-item>
+    <swiper-item >
+        <image src="../images/banner2.jpg" />
+    </swiper-item>
+    <swiper-item >
+        <image src="../images/banner3.jpg" />
+    </swiper-item>
+</swiper>
+<block wx:for="{{useData}}" wx:for-item="item" wx:key="key">
+<view  class="artclelist">
+    <view class="author-time">
+        <image class="author-icon" src="{{item.authorIcon}}"/>
+        <text class="author-name">{{item.authorName}}</text>
+        <text class="author-date">{{item.authorDate}}</text>
+    </view>
+    <text class="title" >{{item.title}}</text>
+    <image class="artcle-img" src="{{item.artcleImg}}" />
+    <text class="artcle-text">{{item.artcleText}} </text>
+    <view class="artcle-like">
+        <image class="artcle-like-icon" src="../images/sc.png" />
+        <text class="artcle-like-text">{{item.artcleLikeComment}}</text>
+        <image class="artcle-like-icon" src="../images/fx.png" />
+        <text class="artcle-like-text"  >{{item.artcleLikeSC}}</text>
+    </view>
+</view>
+</block>
+
+</view>
